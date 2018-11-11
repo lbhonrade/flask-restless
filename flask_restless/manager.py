@@ -330,7 +330,7 @@ class APIManager(object):
         # If we are looking for a relationship URL, the view name ends with
         # '_relationships'.
         if 'relationship' in kw and kw.pop('relationship'):
-            '{}_relationships'.format(view_name)
+            view_name = '{}_relationships'.format(view_name)
         url = flask_url_for(view_name, **kw)
         # if _absolute_url:
         #     url = urljoin(request.url_root, url)
